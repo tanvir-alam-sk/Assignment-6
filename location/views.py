@@ -3,13 +3,13 @@ from django.contrib.auth.models import User,Group
 from django.contrib import messages
 # from django.http import HttpResponse
 
+
 # Create your views here.
 def index(request):
-    return HttpResponse("Welcone As a New User")
+    return HttpResponse("<h1>Welcone As a New User</h1>")
 
 
 def register(request):
-    print("hallo")
     if request.method == 'POST':
         # Collect data from the form
         username = request.POST.get('username')

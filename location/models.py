@@ -3,9 +3,13 @@ from django.contrib.gis.db import models as geomodels  # For spatial fields
 from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
 from decimal import Decimal
+from django.core.exceptions import ValidationError
 from django.utils.text import slugify
 from uuid import uuid4
 import os
+import json
+
+
 
 # Create your models here.
 class Location(models.Model):
@@ -46,13 +50,21 @@ def validate_amenities(value):
     Custom validator to ensure each amenity in the JSON array is a string
     with a maximum length of 100 characters.
     """
-    if not isinstance(value, list):
-        raise ValidationError("Amenities must be a list of strings.")
+    if isinstance(value, str):
+        try:
+            value = json.loads(value)  # Convert string to list
+        except json.JSONDecodeError:
+            raise ValidationError("Invalid JSON format for amenities.")
+
+    # if not isinstance(value, list):
+    #     raise ValidationError("Amenities must be a list of strings.")
+    
     for amenity in value:
         if not isinstance(amenity, str):
             raise ValidationError(f"'{amenity}' is not a string.")
         if len(amenity) > 100:
             raise ValidationError(f"Amenity '{amenity}' exceeds 100 characters.")
+
 
 class Accommodation(models.Model):
     """
@@ -75,6 +87,7 @@ class Accommodation(models.Model):
         blank=True, 
         validators=[validate_amenities]
     )
+    # user = models.CharField(max_length=20, primary_key=True) # ForeignKey to Django's auth_user
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)  # ForeignKey to Django's auth_user
     published = models.BooleanField(default=False)  # Boolean to indicate if the accommodation is published
     created_at = models.DateTimeField(auto_now_add=True)  # Creation timestamp

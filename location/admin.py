@@ -1,5 +1,6 @@
 from django.contrib import admin
 from leaflet.admin import LeafletGeoAdmin
+from django.contrib.auth.models import User
 from .models import Location, Accommodation, AccommodationImage, LocalizeAccommodation
 
 # Register your models here.
@@ -53,6 +54,11 @@ class AccommodationAdmin(LeafletGeoAdmin):
         if obj and obj.user_id != request.user:
             return False  
         return super().has_delete_permission(request, obj)
+    
+    def formfield_for_foreignkey(self, db_field, request, **kwargs):
+        if db_field.name == "user":
+            kwargs["queryset"] = User.objects.filter(id=request.user.id)  # Only show logged-in user
+        return super().formfield_for_foreignkey(db_field, request, **kwargs)
 
 
 @admin.register(AccommodationImage)
