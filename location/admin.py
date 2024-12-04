@@ -1,11 +1,22 @@
 from django.contrib import admin
+from import_export import resources
+from import_export.admin import ImportExportModelAdmin
 from leaflet.admin import LeafletGeoAdmin
 from django.contrib.auth.models import User
 from .models import Location, Accommodation, AccommodationImage, LocalizeAccommodation
 
+
+class LocationResource(resources.ModelResource):
+    class Meta:
+        model = Location
+        # Define which fields to include or exclude in the import/export
+        fields = ('id', 'title', 'location_type', 'country_code', 'state_abbr', 'city', 'center')
+
+
 # Register your models here.
 @admin.register(Location)
-class LocationAdmin(LeafletGeoAdmin):
+class LocationAdmin(ImportExportModelAdmin, LeafletGeoAdmin):
+    resource_class = LocationResource 
     list_display = ('id', 'title', 'location_type', 'country_code', 'state_abbr', 'city')
     search_fields = ('title', 'country_code', 'state_abbr', 'city')
     list_filter = ('location_type', 'country_code')

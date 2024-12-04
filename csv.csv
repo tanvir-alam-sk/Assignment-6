@@ -1,0 +1,3 @@
+ID, Title, Location Type, Country Code, State Abbreviation, City, Latitude, Longitude
+1, "Test Location", "city", "BD", "Dhaka", "Test City", 23.8103, 90.4125
+2, "Another Location", "state", "IN", "MH", "Mumbai", 19.0760, 72.8777

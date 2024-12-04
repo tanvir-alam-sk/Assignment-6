@@ -2,7 +2,9 @@ asgiref
 certifi
 charset-normalizer
 coverage
+diff-match-patch
 Django
+django-import-export
 django-leaflet
 django-widget-tweaks
 djangorestframework
@@ -11,5 +13,6 @@ pillow
 psycopg2-binary
 requests
 sqlparse
+tablib
 typing_extensions
 urllib3
