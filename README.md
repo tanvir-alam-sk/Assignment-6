@@ -121,22 +121,22 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-4 **Run Migrations:**: 
+4 **Docker Run**: 
+```bash 
+docker-compose build
+docker-compose up
+docker-compose down
+```
+
+5 **Run Migrations:**: 
 ```bash 
 docker exec -it  assignment-6-web-1 python manage.py makemigrations
 docker exec -it assignment-6-web-1 python manage.py migrate
 ```
 
-5 **Create Superuser:**: 
+6 **Create Superuser:**: 
 ```bash 
 docker exec -it assignment-6-web-1 python manage.py createsuperuser
-```
-
-6 **Docker Run**: 
-```bash 
-docker-compose build
-docker-compose up
-docker-compose down
 ```
 
 7 **Generate Sitemap**: 
