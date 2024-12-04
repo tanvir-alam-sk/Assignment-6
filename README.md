@@ -86,6 +86,7 @@ This project focuses on developing a Property Management System using the Django
   -  URL format:
      https://www.xyz.com/location/[location_slug]
   -  JSON structure (sorted alphabetically):
+  
         [
             {
                 "USA": "usa",
