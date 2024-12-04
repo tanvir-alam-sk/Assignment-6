@@ -106,7 +106,7 @@ This project focuses on developing a Property Management System using the Django
 ### Getting Started with Docker
 If you're new to Docker, I recommend reading these articles for a solid introduction:
 - [Getting started with Docker](https://dev.to/mbuthi/docker-2oge)
-- [DevOps with Fast API & PostgreSQL: How to containerize Fast API Application with Docker](https://dev.to/mbuthi/devops-with-fast-api-postgresql-how-to-containerize-fast-api-application-with-docker-1jdb)
+- [PostgreSQL: How to containerize with Docker](https://dev.to/mbuthi/devops-with-fast-api-postgresql-how-to-containerize-fast-api-application-with-docker-1jdb)
 
 
 
