@@ -102,37 +102,49 @@ This project focuses on developing a Property Management System using the Django
 ## Installation Instructions
 
 1 **Clone the Repository:**: 
+``` bash 
 git clone https://github.com/tanvir-alam-sk/Assignment-6 inventory-management
 cd inventory-management
+```
 
 2 **Set Up the Virtual Environment:**: 
+```bash 
 python3 -m venv venv
 source venv/bin/activate
+```
 
 3 **Install Dependencies:**: 
+```bash 
 pip install -r requirements.txt
+```
 
 4 **Run Migrations:**: 
+```bash 
 docker exec -it  assignment-6-web-1 python manage.py makemigrations
 docker exec -it assignment-6-web-1 python manage.py migrate
+```
 
 5 **Create Superuser:**: 
+```bash 
 docker exec -it assignment-6-web-1 python manage.py createsuperuser
+```
 
 6 **Docker Run**: 
+```bash 
 docker-compose build
 docker-compose up
 docker-compose down
-
+```
 
 7 **Generate Sitemap**: 
+```bash 
 docker exec -it web python manage.py createsuperuser
+```
 
 8 **Unit Testing**: 
+```bash 
 docker-compose exec assignment-6-web python manage.py test location
-
-
-
+```
 
 
 - **Contributing**: Contributions are welcome, especially from individuals with experience in Django Rest Framework, authentication, authorization, and payment systems like M-PESA. If you're interested in contributing to these areas, please reach out to me via [Twitter](https://twitter.com/MungaiMbuthi) for collaboration.
