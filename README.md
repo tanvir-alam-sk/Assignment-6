@@ -150,13 +150,6 @@ docker-compose exec web python manage.py test location
 docker-compose exec web coverage report
 ```
 
-
-- **Contributing**: Contributions are welcome, especially from individuals with experience in Django Rest Framework, authentication, authorization, and payment systems like M-PESA. If you're interested in contributing to these areas, please reach out to me via [Twitter](https://twitter.com/MungaiMbuthi) for collaboration.
-
-## Installation
-
-This project is containerized using Docker, ensuring a consistent and isolated environment for development and deployment.
-
 ### Prerequisites
 
 - **Docker**: You need to have Docker installed on your local machine. You can download and install Docker from the [official Docker website](https://www.docker.com/get-started).
@@ -165,24 +158,6 @@ This project is containerized using Docker, ensuring a consistent and isolated e
 If you're new to Docker, I recommend reading these articles for a solid introduction:
 - [Getting started with Docker](https://dev.to/mbuthi/docker-2oge)
 - [DevOps with Fast API & PostgreSQL: How to containerize Fast API Application with Docker](https://dev.to/mbuthi/devops-with-fast-api-postgresql-how-to-containerize-fast-api-application-with-docker-1jdb)
-
-### Setup Instructions
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/mbuthi/Inventory_management_system.git
-   ```
-
-2. **Build the Docker Containers**:
-   Navigate to the root directory of the project and run:
-   ```bash
-   docker-compose -f docker-compose.yml build --no-cache
-   ```
-
-3. **Start the Containers**:
-   ```bash
-   docker-compose -f docker-compose.yml up -d
-   ```
 
 ### Project Structure
 
@@ -193,17 +168,13 @@ If you're new to Docker, I recommend reading these articles for a solid introduc
 │   ├── __init__.py            # Package initialization
 │   ├── settings.py            # Django project settings
 │   ├── urls.py                # URL configuration
-│   └── wsgi.py                # WSGI entry point for the project
-├── apps/                      # Custom Django applications
-│   ├── location/              # Location management app
-│   │   ├── models.py          # Location model definitions
-│   │   ├── views.py           # Views for handling location logic
-│   │   ├── admin.py           # Admin configuration for locations
-│   │   └── migrations/        # Database migrations for locations
-│   ├── accommodation/         # Accommodation management app
-│   │   ├── models.py          # Accommodation model definitions
-│   │   ├── views.py           # Views for handling accommodation 
-├── templates/                 # HTML templates for the project
+│   └── wsgi.py                # WSGI entry point for the project                     
+├── location/                  # Location management app
+│   ├── models.py              # Location model definitions
+│   ├── views.py               # Views for handling location logic
+│   ├── admin.py               # Admin configuration for locations
+│   └── migrations/            # Database migrations for locations
+|   └── templates/             # HTML templates for the project
 ├── static/                    # Static files (CSS, JS, images)
 ├── manage.py                  # Django management script
 └── requirements.txt           # Python dependencies
