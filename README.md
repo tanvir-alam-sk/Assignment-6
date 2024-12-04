@@ -213,7 +213,7 @@ If you're new to Docker, I recommend reading these articles for a solid introduc
 
 Once the Docker containers are up and running, the Inventory Management System API will be accessible at the designated port.
 
-In your browser, you can access the API through HTTP://localhost:8000/api/v1
+In your browser, you can access the API through HTTP://localhost:8000
 
 ## API Endpoints
 
