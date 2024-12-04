@@ -99,7 +99,15 @@ This project focuses on developing a Property Management System using the Django
         ]
 ```
 
-    
+### Prerequisites
+
+- **Docker**: You need to have Docker installed on your local machine. You can download and install Docker from the [official Docker website](https://www.docker.com/get-started).
+
+### Getting Started with Docker
+If you're new to Docker, I recommend reading these articles for a solid introduction:
+- [Getting started with Docker](https://dev.to/mbuthi/docker-2oge)
+- [DevOps with Fast API & PostgreSQL: How to containerize Fast API Application with Docker](https://dev.to/mbuthi/devops-with-fast-api-postgresql-how-to-containerize-fast-api-application-with-docker-1jdb)
+
 
 
 ## Installation Instructions
@@ -149,15 +157,6 @@ docker exec -it web python manage.py createsuperuser
 docker-compose exec web python manage.py test location
 docker-compose exec web coverage report
 ```
-
-### Prerequisites
-
-- **Docker**: You need to have Docker installed on your local machine. You can download and install Docker from the [official Docker website](https://www.docker.com/get-started).
-
-### Getting Started with Docker
-If you're new to Docker, I recommend reading these articles for a solid introduction:
-- [Getting started with Docker](https://dev.to/mbuthi/docker-2oge)
-- [DevOps with Fast API & PostgreSQL: How to containerize Fast API Application with Docker](https://dev.to/mbuthi/devops-with-fast-api-postgresql-how-to-containerize-fast-api-application-with-docker-1jdb)
 
 ### Project Structure
 
