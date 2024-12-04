@@ -86,16 +86,18 @@ This project focuses on developing a Property Management System using the Django
   -  URL format:
      https://www.xyz.com/location/[location_slug]
   -  JSON structure (sorted alphabetically):
-  
+  ```bash
         [
             {
                 "USA": "usa",
                 "locations": [
-                { "Florida": "usa/florida" },
+                { "Florida": "usa/florida" 
+                },
                 { "Texas": "usa/texas" }
                 ]
             }
         ]
+```
 
     
 
@@ -181,9 +183,31 @@ If you're new to Docker, I recommend reading these articles for a solid introduc
    docker-compose -f docker-compose.yml up -d
    ```
 
-### Database
+### Project Structure
 
-- The project uses **PostgreSQL** as its database. The Docker setup includes the PostgreSQL container, so you do not need to install it separately.
+
+```text
+/project-root
+├── inventory_management/
+│   ├── __init__.py            # Package initialization
+│   ├── settings.py            # Django project settings
+│   ├── urls.py                # URL configuration
+│   └── wsgi.py                # WSGI entry point for the project
+├── apps/                      # Custom Django applications
+│   ├── location/              # Location management app
+│   │   ├── models.py          # Location model definitions
+│   │   ├── views.py           # Views for handling location logic
+│   │   ├── admin.py           # Admin configuration for locations
+│   │   └── migrations/        # Database migrations for locations
+│   ├── accommodation/         # Accommodation management app
+│   │   ├── models.py          # Accommodation model definitions
+│   │   ├── views.py           # Views for handling accommodation 
+├── templates/                 # HTML templates for the project
+├── static/                    # Static files (CSS, JS, images)
+├── manage.py                  # Django management script
+└── requirements.txt           # Python dependencies
+```
+
 
 ### Running the Application
 
@@ -194,22 +218,8 @@ In your browser, you can access the API through HTTP://localhost:8000/api/v1
 ## API Endpoints
 
 ### Items
-- `POST /items`: Add a new inventory item.
-- `GET /items`: Retrieve a list of all inventory items.
+- `admin /`: Add a new inventory item.
+- `/register`: Register a new user.
+- `/welcome `: Welcome Registed a new user.
 
-### Stock
-- `POST /stock`: Add stock for an item.
-- `GET /stock/{itemId}`: Retrieve current stock for an item.
 
-### Transactions
-- `POST /transactions`: Record a new transaction.
-- `GET /transactions`: Retrieve all transactions.
-
-_More endpoints are detailed in the documentation._
-
-## Project Structure
-
-- `models/`: Contains the models for the API.
-- `serializers/`: Contains serializers for model instances.
-- `views/`: Contains views for handling requests.
-- `urls.py`: URL declarations for the API endpoints.
