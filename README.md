@@ -146,7 +146,8 @@ docker exec -it web python manage.py createsuperuser
 
 8 **Unit Testing**: 
 ```bash 
-docker-compose exec assignment-6-web python manage.py test location
+docker-compose exec web python manage.py test location
+docker-compose exec web coverage report
 ```
 
 

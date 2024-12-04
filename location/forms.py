@@ -11,5 +11,5 @@ class AccommodationForm(forms.ModelForm):
         user = kwargs.pop('user')  # Pop the user from kwargs
         super(AccommodationForm, self).__init__(*args, **kwargs)
         # Filter the location queryset if necessary
-        self.fields['user'].queryset = User.objects.filter(id=user.id)  # Only show logged-in user
+        self.fields['user'].queryset = User.objects.filter(id=user.id)  
         self.fields['user'].initial = user  # Set initial user value

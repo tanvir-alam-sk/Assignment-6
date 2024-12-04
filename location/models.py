@@ -11,6 +11,8 @@ import json
 
 
 
+
+
 # Create your models here.
 class Location(models.Model):
     """
