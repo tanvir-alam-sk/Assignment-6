@@ -8,10 +8,7 @@ from django.urls import reverse
 from django.contrib.messages import get_messages
 from django.http import HttpResponse
 from unittest.mock import patch
-
-
-# Create your tests here.
-# location/tests.py
+from decimal import Decimal
 
 
 
