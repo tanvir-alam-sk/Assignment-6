@@ -158,6 +158,21 @@ docker-compose exec web python manage.py test location
 docker-compose exec web coverage report
 ```
 
+
+### Running the Application
+
+Once the Docker containers are up and running, the Inventory Management System API will be accessible at the designated port.
+
+In your browser, you can access the API through HTTP://localhost:8000
+
+## API Endpoints
+
+### Items
+- `admin/`: Add a new inventory item.
+- `/register`: Register a new user.
+- `/welcome `: Welcome Registed a new user.
+
+
 ### Project Structure
 
 
@@ -180,17 +195,5 @@ docker-compose exec web coverage report
 ```
 
 
-### Running the Application
-
-Once the Docker containers are up and running, the Inventory Management System API will be accessible at the designated port.
-
-In your browser, you can access the API through HTTP://localhost:8000
-
-## API Endpoints
-
-### Items
-- `admin /`: Add a new inventory item.
-- `/register`: Register a new user.
-- `/welcome `: Welcome Registed a new user.
 
 
